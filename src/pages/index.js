@@ -3,10 +3,8 @@ import { Inter } from "next/font/google";
 import Layout from "@/components/Layout";
 import Image from "next/image";
 import profilePic from "../../public/images/profile/profilealt.png";
-import AnimatedText from "./AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
-import HireMe from "@/components/HireMe";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +13,7 @@ export default function Home() {
     <>
       <Head>
         {/*<!-- HTML Meta Tags -->*/}
-        <title>BeeSeeWhy's Portfolio</title>
+        <title>BeeSeeWhy&apos;s Portfolio</title>
         <meta name="description" content="Brandon Cruz-Youll's Portfolio." />
 
         {/*<!-- Facebook Meta Tags -->*/}
@@ -56,7 +54,7 @@ export default function Home() {
                 applications. My expertise in modern technologies like React.js
                 allows me to build seamless, high-performance user interfaces
                 that not only look great but also deliver exceptional user
-                experiences. On this portfolio site, you'll find a curated
+                experiences. On this portfolio site, you&apos;ll find a curated
                 selection of my latest projects that highlight my proficiency in
                 crafting responsive designs, optimizing performance, and
                 implementing interactive features. Dive into my work to see how

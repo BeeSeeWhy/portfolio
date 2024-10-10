@@ -26,24 +26,24 @@ const about = () => {
                 Biography
               </h2>
               <p className="font-medium">
-                Hello! I’m Brandon Cruz-Youll, a dedicated front-end developer
-                with a fervent passion for continuous learning and growth. With
-                a year of hands-on experience in the industry, I specialize in
-                transforming designers' creative visions into interactive,
-                user-friendly web experiences. My expertise lies in crafting
-                elegant and efficient code that enhances the usability and
-                aesthetics of websites.
+                Hello! I&apos;m Brandon Cruz-Youll, a dedicated front-end
+                developer with a fervent passion for continuous learning and
+                growth. With a year of hands-on experience in the industry, I
+                specialize in transforming designers&apos; creative visions into
+                interactive, user-friendly web experiences. My expertise lies in
+                crafting elegant and efficient code that enhances the usability
+                and aesthetics of websites.
               </p>
               <p className="my-4 font-medium">
                 I thrive on the challenge of solving complex problems and
                 exploring new technologies to stay ahead of industry trends.
-                Whether it's optimizing performance, improving accessibility, or
-                experimenting with the latest frameworks, I am committed to
-                delivering high-quality solutions that exceed expectations. My
-                goal is to blend technical skill with creative insight to create
-                seamless, engaging digital experiences that leave a lasting
-                impression. Let’s collaborate to bring your next project to
-                life!
+                Whether it&apos;s optimizing performance, improving
+                accessibility, or experimenting with the latest frameworks, I am
+                committed to delivering high-quality solutions that exceed
+                expectations. My goal is to blend technical skill with creative
+                insight to create seamless, engaging digital experiences that
+                leave a lasting impression. Let&apos;s collaborate to bring your
+                next project to life!
               </p>
             </div>
             <div className="col-span-2 flex flex-col items-end justify-between"></div>

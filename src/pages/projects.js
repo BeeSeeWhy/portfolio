@@ -119,7 +119,7 @@ const projects = () => {
                 type="School Project"
                 title="Alien Invasion: create a game in javascript without using any libraries."
                 img={alien}
-                link="/"
+                link="https://javascript-alien-invasion.vercel.app/"
                 github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
               />
             </div>

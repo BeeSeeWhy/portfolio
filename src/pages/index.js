@@ -38,17 +38,17 @@ export default function Home() {
         />
       </Head>
       <main className="flex items-center text-dark w-full min-h-screen">
-        <Layout className="pt-0">
-          <div className="flex items-center justify-between w-full">
-            <div className="w-1/2">
+        <Layout className="pt-4 sm:pt-6 md:pt-10 lg:pt-0">
+          <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-10 lg:gap-12">
+            <div className="w-full lg:w-1/2 max-w-xl lg:max-w-none">
               <Image src={profilePic} alt="Brandon" className="w-full h-auto" />
             </div>
-            <div className="w-1/2 flex flex-col items-center self-center">
-              <h1 className="!text-8xl font-bold !text-left">
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start self-center">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl font-bold text-center lg:text-left leading-tight">
                 From Vision to Screen: Engineering Your Digital Future.
               </h1>
 
-              <p className="my-4 text-base font-medium">
+              <p className="my-4 text-sm sm:text-base lg:text-lg font-medium text-center lg:text-left">
                 As a passionate and skilled front-end developer, I specialize in
                 transforming ideas into dynamic and visually stunning web
                 applications. My expertise in modern technologies like React.js
@@ -62,12 +62,12 @@ export default function Home() {
                 innovative concepts to life and solve complex challenges in web
                 development.
               </p>
-              <div className="flex items-center self-start mt-2">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start self-center lg:self-start mt-2 gap-3 sm:gap-4">
                 <Link
                   href="/Brandon_CruzYoull_Resume.pdf"
                   target={"_blank"}
-                  className="flex items-center bg-dark text-light p-2.5 px-6
-              rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
+                  className="flex items-center bg-dark text-light p-2.5 px-5 sm:px-6
+              rounded-lg text-base sm:text-lg font-semibold hover:bg-light hover:text-dark
               border-2 border-solid border-transparent hover:border-dark
               "
                   download={true}
@@ -77,7 +77,7 @@ export default function Home() {
                 <Link
                   href="mailto:brandon.cruzyoull@gmail.com"
                   target={"_blank"}
-                  className="ml-4 text-lg font-medium capitalize text-dark underline"
+                  className="text-base sm:text-lg font-medium capitalize text-dark underline"
                 >
                   Contact
                 </Link>

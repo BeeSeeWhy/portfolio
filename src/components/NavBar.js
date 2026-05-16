@@ -32,14 +32,14 @@ const CustomLink = ({ href, title, className = " " }) => {
 
 const NavBar = () => {
   return (
-    <header className="w-full px-32 py-8 font-medium flex items-center justify-between">
-      <nav>
+    <header className="relative w-full px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <nav className="flex items-center justify-center md:justify-start text-sm sm:text-base">
         <CustomLink href="/" title="Home" className="mr-4" />
         <CustomLink href="/about" title="About" className="mx-4" />
         <CustomLink href="/projects" title="Projects" className="mx-4" />
       </nav>
 
-      <nav className="flex items-center justify-center flex-wrap">
+      <nav className="flex items-center justify-center flex-wrap order-3 md:order-none">
         <motion.a
           href="https://github.com/BeeSeeWhy"
           target={"_blank"}
@@ -60,7 +60,7 @@ const NavBar = () => {
         </motion.a>
       </nav>
 
-      <div className="absolute left-[50%] top-2 translate-x-[-50%">
+      <div className="absolute left-1/2 top-3 -translate-x-1/2 md:static md:translate-x-0 md:top-auto md:left-auto">
         <Logo />
       </div>
     </header>

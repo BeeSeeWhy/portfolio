@@ -7,11 +7,11 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   return (
     <li
       ref={ref}
-      className="my-9 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between"
+      className="my-9 first:mt-0 last:mb-0 w-[88%] sm:w-[85%] lg:w-[70%] xl:w-[60%] mx-auto flex flex-col items-center justify-between"
     >
       <LiIcon reference={ref} />
       <div>
-        <h3 className="capitalize font-bold text-2xl">
+        <h3 className="capitalize font-bold text-lg sm:text-xl lg:text-2xl">
           {position}&nbsp;
           <a
             href={companyLink}
@@ -21,10 +21,10 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
             @{company}
           </a>
         </h3>
-        <span className="capitalize font-medium text-dark/75">
+        <span className="capitalize font-medium text-dark/75 text-sm sm:text-base">
           {time} | {address}
         </span>
-        <p className="font-medium w-full">{work}</p>
+        <p className="font-medium w-full text-sm sm:text-base">{work}</p>
       </div>
     </li>
   );
@@ -37,22 +37,21 @@ const Experience = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div className="my-64">
-      <h2 className="font-bold text-8xl mb-32 w-full text-center">
+    <div className="my-24 sm:my-32 md:my-40 lg:my-64">
+      <h2 className="font-bold text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl mb-12 sm:mb-20 md:mb-24 lg:mb-32 w-full text-center">
         Experience
       </h2>
-      <div ref={ref} className="w-[75%] mx-auto relative">
-        <div className="absolute left-9 top-0 w-[4px] h-full bg-dark/50 origin-top" />
+      <div ref={ref} className="w-full sm:w-[92%] lg:w-[80%] xl:w-[75%] mx-auto relative">
+        <div className="absolute left-4 sm:left-6 lg:left-9 top-0 w-[3px] sm:w-[4px] h-full bg-dark/50 origin-top" />
 
-        <ul className="w-full flex flex-col items-start justify-between ml-4">
+        <ul className="w-full flex flex-col items-start justify-between ml-2 sm:ml-4">
           <Details
-            position="Software Engineer"
-            company="Compass"
-            companyLink="https://staging.compassiep.com/"
-            time="2023-Present"
+            position="Front End Software Engineer"
+            company="Nayak.ai"
+            companyLink="https://www.nayak.ai"
+            time="2025-Present"
             address="San Francisco, CA"
-            work="Pair programmed edit for student/staff. Refactored edit staff with modal.
-             Worked on System Design components for Search and Input."
+            work="Vite, React, Typescript, SCSS, PostgreSQL, Node.js. Adding new features to the web application. Building new sections of the application. Worked on company website using Webflow. Created and updated email templates in SendGrid."
           />
           <Details
             position="Software Engineer/Technical Project Manager"

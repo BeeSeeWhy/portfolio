@@ -126,7 +126,7 @@ const projects = () => {
             <div className="col-span-12">
               <FeaturedProject
                 type="Volunteer Project"
-                title="Support SFUSD"
+                title="Support SF Schools"
                 summary="A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating."
                 img={support}
                 link="https://supportsfschools.org"

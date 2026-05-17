@@ -17,24 +17,24 @@ export default function Home() {
         <meta name="description" content="Brandon Cruz-Youll's Portfolio." />
 
         {/*<!-- Facebook Meta Tags -->*/}
-        <meta property="og:url" content="https://www.beeseewhy.dev/" />
+        <meta property="og:url" content="https://www.beeseewhy.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Brandon Cruz-Youll's Portfolio" />
         <meta property="og:description" content="BCY = BeeSeeWhy." />
         <meta
           property="og:image"
-          content="https://www.beeseewhy.dev/profilealt.png"
+          content="https://www.beeseewhy.com/profilealt.png"
         />
 
         {/*<!-- Twitter Meta Tags -->*/}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="beeseewhy.dev" />
-        <meta property="twitter:url" content="https://www.beeseewhy.dev/" />
+        <meta property="twitter:domain" content="beeseewhy.com" />
+        <meta property="twitter:url" content="https://www.beeseewhy.com/" />
         <meta name="twitter:title" content="Brandon Cruz-Youll's Portfolio" />
         <meta name="twitter:description" content="BCY = BeeSeeWhy." />
         <meta
           name="twitter:image"
-          content="https://www.beeseewhy.dev/profilealt.png"
+          content="https://www.beeseewhy.com/profilealt.png"
         />
       </Head>
       <main className="flex items-center text-dark w-full min-h-screen">
@@ -64,7 +64,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start self-center lg:self-start mt-2 gap-3 sm:gap-4">
                 <Link
-                  href="/Brandon_CruzYoull_Resume.pdf"
+                  href="/Brandon_Cruz-Youll_Resume.pdf"
                   target={"_blank"}
                   className="flex items-center bg-dark text-light p-2.5 px-5 sm:px-6
               rounded-lg text-base sm:text-lg font-semibold hover:bg-light hover:text-dark
@@ -75,7 +75,7 @@ export default function Home() {
                   Resume <LinkArrow className={"w-6 ml-1"} />
                 </Link>
                 <Link
-                  href="mailto:brandon.cruzyoull@gmail.com"
+                  href="mailto:brandon@beeseewhy.com"
                   target={"_blank"}
                   className="text-base sm:text-lg font-medium capitalize text-dark underline"
                 >

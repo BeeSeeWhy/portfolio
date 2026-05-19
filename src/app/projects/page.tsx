@@ -1,15 +1,32 @@
 import Layout from "@/components/Layout";
-import Head from "next/head";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "@/components/Icons";
-import support from "../../public/images/projects/support_sfusd.png";
-import artemis from "../../public/images/projects/artemis.png";
-import alien from "../../public/images/projects/alieninvasion.png";
-import ducks from "../../public/images/projects/duckhunter.png";
+import type { StaticImageData } from "next/image";
+import support from "../../../public/images/projects/support_sfusd.png";
+import artemis from "../../../public/images/projects/artemis.png";
+import alien from "../../../public/images/projects/alieninvasion.png";
+import ducks from "../../../public/images/projects/duckhunter.png";
 
-const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+type FeaturedProjectProps = {
+  type: string;
+  title: string;
+  summary: string;
+  img: StaticImageData;
+  link?: string;
+  github: string;
+};
+
+type ProjectProps = {
+  type: string;
+  title: string;
+  img: StaticImageData;
+  link?: string;
+  github: string;
+};
+
+const FeaturedProject = ({ type, title, summary, img, link, github }: FeaturedProjectProps) => {
   const hasLiveLink = Boolean(link && link !== "/");
 
   return (
@@ -20,7 +37,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
     >
       {hasLiveLink ? (
         <Link
-          href={link}
+          href={link!}
           target="_blank"
           className="w-full lg:w-1/2 cursor-pointer overflow-hidden rounded-lg"
         >
@@ -34,7 +51,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
       <div className="w-full lg:w-1/2 flex flex-col items-start justify-between lg:pl-6">
         <span className="text-primary font-medium text-base sm:text-lg lg:text-xl">{type}</span>
         {hasLiveLink ? (
-          <Link href={link} target="_blank">
+          <Link href={link!} target="_blank">
             <h2 className="my-2 w-full text-left text-2xl sm:text-3xl lg:text-4xl font-bold">{title}</h2>
           </Link>
         ) : (
@@ -47,7 +64,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
           </Link>
           {hasLiveLink ? (
             <Link
-              href={link}
+              href={link!}
               target="_blank"
               className="ml-4 rounded-lg bg-dark text-light p-2 px-5 sm:px-6 text-sm sm:text-base lg:text-lg font-semibold"
             >
@@ -60,7 +77,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   );
 };
 
-const Project = ({ type, title, img, link, github }) => {
+const Project = ({ type, title, img, link, github }: ProjectProps) => {
   const hasLiveLink = Boolean(link && link !== "/");
 
   return (
@@ -71,7 +88,7 @@ const Project = ({ type, title, img, link, github }) => {
     >
       {hasLiveLink ? (
         <Link
-          href={link}
+          href={link!}
           target="_blank"
           className="w-full cursor-pointer overflow-hidden rounded-lg"
         >
@@ -85,7 +102,7 @@ const Project = ({ type, title, img, link, github }) => {
       <div className="w-full flex flex-col items-start justify-between mt-4">
         <span className="text-primary font-medium text-base sm:text-lg lg:text-xl">{type}</span>
         {hasLiveLink ? (
-          <Link href={link} target="_blank">
+          <Link href={link!} target="_blank">
             <h2 className="my-2 w-full text-left text-2xl sm:text-3xl font-bold">{title}</h2>
           </Link>
         ) : (
@@ -94,7 +111,7 @@ const Project = ({ type, title, img, link, github }) => {
         <div className="w-full mt-2 flex items-center justify-between">
           {hasLiveLink ? (
             <Link
-              href={link}
+              href={link!}
               target="_blank"
               className="text-base sm:text-lg font-semibold underline"
             >
@@ -102,7 +119,7 @@ const Project = ({ type, title, img, link, github }) => {
             </Link>
           ) : <span />}
           <Link href={github} target="_blank" className="w-8">
-            <GithubIcon />{" "}
+            <GithubIcon />
           </Link>
         </div>
       </div>
@@ -110,60 +127,52 @@ const Project = ({ type, title, img, link, github }) => {
   );
 };
 
-const projects = () => {
+export default function Projects() {
   return (
-    <>
-      <Head>
-        <title>Brandon Cruz-Youll | Projects Page</title>
-        <meta name="description" content="Projects By Brandon Cruz-Youll" />
-      </Head>
-      <main className="w-full mb-16 flex flex-col items-center justify-center">
-        <Layout className="pt-10 sm:pt-12 md:pt-16">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
-            Dedication In Action!
-          </h1>
-          <div className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 gap-y-12 sm:gap-y-16 lg:gap-y-24">
-            <div className="col-span-12">
-              <FeaturedProject
-                type="Volunteer Project"
-                title="Support SF Schools"
-                summary="A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating."
-                img={support}
-                link="https://supportsfschools.org"
-                github="https://github.com/sfbrigade/support-sfusd"
-              />
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <Project
-                type="School Project"
-                title="Artemis: A Take on Trello"
-                img={artemis}
-                github="https://github.com/CSC-648-SFSU/csc648-spring22-04-team02"
-              />
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <Project
-                type="School Project"
-                title="Alien Invasion: create a game in javascript without using any libraries."
-                img={alien}
-                link="https://javascript-alien-invasion.vercel.app/"
-                github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
-              />
-            </div>
-            <div className="col-span-12">
-              <FeaturedProject
-                type="School Project"
-                title="Duck Hunter"
-                summary="The assignment was create a storefront in javascript wihtout using any libraries"
-                img={ducks}
-                github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
-              />
-            </div>
+    <main className="w-full mb-16 flex flex-col items-center justify-center">
+      <Layout className="pt-10 sm:pt-12 md:pt-16">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
+          Dedication In Action!
+        </h1>
+        <div className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 gap-y-12 sm:gap-y-16 lg:gap-y-24">
+          <div className="col-span-12">
+            <FeaturedProject
+              type="Volunteer Project"
+              title="Support SF Schools"
+              summary="A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating."
+              img={support}
+              link="https://supportsfschools.org"
+              github="https://github.com/sfbrigade/support-sfusd"
+            />
           </div>
-        </Layout>
-      </main>
-    </>
+          <div className="col-span-12 md:col-span-6">
+            <Project
+              type="School Project"
+              title="Artemis: A Take on Trello"
+              img={artemis}
+              github="https://github.com/CSC-648-SFSU/csc648-spring22-04-team02"
+            />
+          </div>
+          <div className="col-span-12 md:col-span-6">
+            <Project
+              type="School Project"
+              title="Alien Invasion: create a game in javascript without using any libraries."
+              img={alien}
+              link="https://javascript-alien-invasion.vercel.app/"
+              github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
+            />
+          </div>
+          <div className="col-span-12">
+            <FeaturedProject
+              type="School Project"
+              title="Duck Hunter"
+              summary="The assignment was create a storefront in javascript wihtout using any libraries"
+              img={ducks}
+              github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
+            />
+          </div>
+        </div>
+      </Layout>
+    </main>
   );
-};
-
-export default projects;
+}

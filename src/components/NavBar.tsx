@@ -40,7 +40,7 @@ const CustomLink = ({ href, title, className = " " }: CustomLinkProps) => {
 
 const NavBar = () => {
   return (
-    <header className="relative w-full px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium">
+    <header className="relative w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium">
       <div className="flex items-center justify-between gap-4 md:hidden">
         <nav className="flex items-center gap-3 text-sm sm:text-base">
           <CustomLink href="/" title="Home" />
@@ -79,7 +79,7 @@ const NavBar = () => {
           <CustomLink href="/projects" title="Projects" className="mx-4" />
         </nav>
 
-        <div className="absolute left-1/2 top-3 -translate-x-1/2">
+        <div className="absolute left-1/2 top-3 z-10 -translate-x-1/2">
           <Logo />
         </div>
 

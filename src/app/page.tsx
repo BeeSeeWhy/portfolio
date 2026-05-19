@@ -13,7 +13,7 @@ export default function Home() {
       <Layout className="pt-4 sm:pt-6 md:pt-10 lg:pt-0">
         <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-10 lg:gap-12">
           <div className="w-full lg:w-1/2 max-w-xl lg:max-w-none">
-            <Image src={profilePic} alt="Brandon" className="w-full h-auto" />
+            <Image src={profilePic} alt="Brandon" className="w-full h-auto" priority loading="eager" />
           </div>
           <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start self-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl font-bold text-center lg:text-left leading-tight">

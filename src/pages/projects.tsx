@@ -4,12 +4,30 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { GithubIcon } from "@/components/Icons";
+import type { StaticImageData } from "next/image";
 import support from "../../public/images/projects/support_sfusd.png";
 import artemis from "../../public/images/projects/artemis.png";
 import alien from "../../public/images/projects/alieninvasion.png";
 import ducks from "../../public/images/projects/duckhunter.png";
 
-const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+type FeaturedProjectProps = {
+  type: string;
+  title: string;
+  summary: string;
+  img: StaticImageData;
+  link?: string;
+  github: string;
+};
+
+type ProjectProps = {
+  type: string;
+  title: string;
+  img: StaticImageData;
+  link?: string;
+  github: string;
+};
+
+const FeaturedProject = ({ type, title, summary, img, link, github }: FeaturedProjectProps) => {
   const hasLiveLink = Boolean(link && link !== "/");
 
   return (
@@ -60,7 +78,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   );
 };
 
-const Project = ({ type, title, img, link, github }) => {
+const Project = ({ type, title, img, link, github }: ProjectProps) => {
   const hasLiveLink = Boolean(link && link !== "/");
 
   return (

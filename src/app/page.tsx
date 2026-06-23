@@ -231,11 +231,9 @@ export default function Home() {
               <p className="font-medium text-sm sm:text-base lg:text-lg">
                 Hello! I&apos;m Brandon Cruz-Youll, a dedicated front-end
                 developer with a fervent passion for continuous learning and
-                growth. With a year of hands-on experience in the industry, I
-                specialize in transforming designers&apos; creative visions into
-                interactive, user-friendly web experiences. My expertise lies in
-                crafting elegant and efficient code that enhances the usability
-                and aesthetics of websites.
+                growth. I spent 18 years in medical triage and billing operations—a world where there is no room for lag, ambiguity, or broken workflows. That 'Operator’s Mindset' is what I bring to the browser.
+
+My specialty is building frontend infrastructure that solves real-world bottlenecks. Whether it's optimizing React renders for real-time AI tools at Nayak.ai or leading a framework migration for SF Civic Tech, I build with a focus on reliability, performance, and scale. I don't just ship code; I build tools that work when the stakes are high.
               </p>
               <p className="my-4 font-medium text-sm sm:text-base lg:text-lg">
                 I thrive on the challenge of solving complex problems and

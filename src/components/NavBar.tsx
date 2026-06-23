@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import {
-  DribbbleIcon,
   GithubIcon,
   LinkedInIcon,
-  PinterestIcon,
-  TwitterIcon,
 } from "./Icons";
 import { motion } from "framer-motion";
 
@@ -61,8 +58,8 @@ const NavBar = () => {
       <div className="flex items-center justify-between gap-4 md:hidden">
         <nav className="flex items-center gap-3 text-sm sm:text-base">
           <CustomLink href="#home" title="Home" activeSection={activeSection} />
-          <CustomLink href="#about" title="About" activeSection={activeSection} />
           <CustomLink href="#projects" title="Projects" activeSection={activeSection} />
+          <CustomLink href="#about" title="About" activeSection={activeSection} />
         </nav>
 
         <Logo />

@@ -175,6 +175,50 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="projects" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
+            Dedication In Action!
+          </h1>
+          <div className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 gap-y-12 sm:gap-y-16 lg:gap-y-24">
+            <div className="col-span-12">
+              <FeaturedProject
+                type="Volunteer Project"
+                title="Support SF Schools"
+                summary="A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating."
+                img={support}
+                link="https://supportsfschools.org"
+                github="https://github.com/sfbrigade/support-sfusd"
+              />
+            </div>
+            <div className="col-span-12 md:col-span-6">
+              <Project
+                type="School Project"
+                title="Artemis: A Take on Trello"
+                img={artemis}
+                github="https://github.com/CSC-648-SFSU/csc648-spring22-04-team02"
+              />
+            </div>
+            <div className="col-span-12 md:col-span-6">
+              <Project
+                type="School Project"
+                title="Alien Invasion: create a game in javascript without using any libraries."
+                img={alien}
+                link="https://javascript-alien-invasion.vercel.app/"
+                github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
+              />
+            </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                type="School Project"
+                title="Duck Hunter"
+                summary="The assignment was create a storefront in javascript wihtout using any libraries"
+                img={ducks}
+                github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
+              />
+            </div>
+          </div>
+        </section>
+
         <section id="about" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
             Passion Fuels Purpose!
@@ -222,50 +266,6 @@ export default function Home() {
           <Skills />
           <Experience />
           <Education />
-        </section>
-
-        <section id="projects" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
-            Dedication In Action!
-          </h1>
-          <div className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 gap-y-12 sm:gap-y-16 lg:gap-y-24">
-            <div className="col-span-12">
-              <FeaturedProject
-                type="Volunteer Project"
-                title="Support SF Schools"
-                summary="A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating."
-                img={support}
-                link="https://supportsfschools.org"
-                github="https://github.com/sfbrigade/support-sfusd"
-              />
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <Project
-                type="School Project"
-                title="Artemis: A Take on Trello"
-                img={artemis}
-                github="https://github.com/CSC-648-SFSU/csc648-spring22-04-team02"
-              />
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <Project
-                type="School Project"
-                title="Alien Invasion: create a game in javascript without using any libraries."
-                img={alien}
-                link="https://javascript-alien-invasion.vercel.app/"
-                github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
-              />
-            </div>
-            <div className="col-span-12">
-              <FeaturedProject
-                type="School Project"
-                title="Duck Hunter"
-                summary="The assignment was create a storefront in javascript wihtout using any libraries"
-                img={ducks}
-                github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
-              />
-            </div>
-          </div>
         </section>
       </Layout>
     </main>

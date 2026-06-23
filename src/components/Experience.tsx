@@ -56,6 +56,14 @@ const Experience = () => {
             work="Vite, React, Typescript, SCSS, PostgreSQL, Node.js. Modernized 100% of the primary app interface. Solved the Drowning in Renders issue. Adding new features to the web application. Building new sections of the application. Worked on company website using Webflow. Created and updated email templates in SendGrid."
           />
           <Details
+            position="Technical Help Volunteer"
+            company="San Francisco Public Library"
+            companyLink="https://sfpl.org/locations/main-library/bridge-main-5th-floor"
+            time="2024-Present"
+            address="San Francisco, CA"
+            work="Help patrons with personal technology questions and provide technical assistance."
+          />
+          <Details
             position="Software Engineer/Technical Project Manager"
             company="Support SFUSD"
             companyLink="https://www.supportsfschools.org/"

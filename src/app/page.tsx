@@ -190,6 +190,16 @@ export default function Home() {
                 github="https://github.com/sfbrigade/support-sfusd"
               />
             </div>
+            <div className="col-span-12">
+              <FeaturedProject
+                type="School Project"
+                title="Alien Invasion"
+                summary="The assignment was create a game in javascript without using any libraries."
+                img={alien}
+                link="https://javascript-alien-invasion.vercel.app/"
+                github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
+              />
+            </div>
             <div className="col-span-12 md:col-span-6">
               <Project
                 type="School Project"
@@ -201,17 +211,7 @@ export default function Home() {
             <div className="col-span-12 md:col-span-6">
               <Project
                 type="School Project"
-                title="Alien Invasion: create a game in javascript without using any libraries."
-                img={alien}
-                link="https://javascript-alien-invasion.vercel.app/"
-                github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
-              />
-            </div>
-            <div className="col-span-12">
-              <FeaturedProject
-                type="School Project"
-                title="Duck Hunter"
-                summary="The assignment was create a storefront in javascript wihtout using any libraries"
+                title="Duck Hunter: create a storefront in vanilla javascript"
                 img={ducks}
                 github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
               />

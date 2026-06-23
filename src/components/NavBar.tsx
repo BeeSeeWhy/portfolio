@@ -1,15 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
-import { usePathname } from "next/navigation";
 import {
-  DribbbleIcon,
   GithubIcon,
   LinkedInIcon,
-  PinterestIcon,
-  TwitterIcon,
 } from "./Icons";
 import { motion } from "framer-motion";
 
@@ -17,10 +13,12 @@ type CustomLinkProps = {
   href: string;
   title: string;
   className?: string;
+  activeSection: string;
 };
 
-const CustomLink = ({ href, title, className = " " }: CustomLinkProps) => {
-  const pathname = usePathname();
+const CustomLink = ({ href, title, className = " ", activeSection }: CustomLinkProps) => {
+  const isActive = activeSection === href;
+
   return (
     <Link href={href} className={`${className} relative group`}>
       {title}
@@ -29,7 +27,7 @@ const CustomLink = ({ href, title, className = " " }: CustomLinkProps) => {
             h-[1px] inline-block bg-dark
             absolute left-0 -bottom-0.5
             group-hover:w-full transition-[width] ease duration-300
-            ${pathname === href ? "w-full" : "w-0"}
+            ${isActive ? "w-full" : "w-0"}
             `}
       >
         &nbsp;
@@ -39,13 +37,29 @@ const CustomLink = ({ href, title, className = " " }: CustomLinkProps) => {
 };
 
 const NavBar = () => {
+  const [activeSection, setActiveSection] = useState("#home");
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      const hash = window.location.hash || "#home";
+      setActiveSection(hash);
+    };
+
+    updateActiveSection();
+    window.addEventListener("hashchange", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("hashchange", updateActiveSection);
+    };
+  }, []);
+
   return (
     <header className="relative w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium">
       <div className="flex items-center justify-between gap-4 md:hidden">
         <nav className="flex items-center gap-3 text-sm sm:text-base">
-          <CustomLink href="/" title="Home" />
-          <CustomLink href="/about" title="About" />
-          <CustomLink href="/projects" title="Projects" />
+          <CustomLink href="#home" title="Home" activeSection={activeSection} />
+          <CustomLink href="#projects" title="Projects" activeSection={activeSection} />
+          <CustomLink href="#about" title="About" activeSection={activeSection} />
         </nav>
 
         <Logo />
@@ -74,9 +88,9 @@ const NavBar = () => {
 
       <div className="hidden md:flex items-center justify-between">
         <nav className="flex items-center justify-center text-base">
-          <CustomLink href="/" title="Home" className="mr-4" />
-          <CustomLink href="/about" title="About" className="mx-4" />
-          <CustomLink href="/projects" title="Projects" className="mx-4" />
+          <CustomLink href="#home" title="Home" className="mr-4" activeSection={activeSection} />
+          <CustomLink href="#about" title="About" className="mx-4" activeSection={activeSection} />
+          <CustomLink href="#projects" title="Projects" className="mx-4" activeSection={activeSection} />
         </nav>
 
         <div className="absolute left-1/2 top-3 z-10 -translate-x-1/2">

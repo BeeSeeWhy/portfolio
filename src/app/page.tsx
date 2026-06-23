@@ -67,7 +67,14 @@ const FeaturedProject = ({ type, title, summary, img, link, github }: FeaturedPr
         )}
         <p className="my-2 font-medium text-dark text-sm sm:text-base lg:text-lg">{summary}</p>
         <div className="mt-2 flex items-center">
-          <Link href={github} target="_blank" className="w-10">
+          <Link
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${title} source code on GitHub`}
+            title={`GitHub repository for ${title}`}
+            className="w-10"
+          >
             <GithubIcon />
           </Link>
           {hasLiveLink ? (
@@ -126,7 +133,14 @@ const Project = ({ type, title, img, link, github }: ProjectProps) => {
               Visit
             </Link>
           ) : <span />}
-          <Link href={github} target="_blank" className="w-8">
+          <Link
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`View ${title} source code on GitHub`}
+            title={`GitHub repository for ${title}`}
+            className="w-8"
+          >
             <GithubIcon />
           </Link>
         </div>

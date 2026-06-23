@@ -54,7 +54,7 @@ const NavBar = () => {
   }, []);
 
   return (
-    <header className="relative w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium">
+    <header className="sticky top-0 z-50 w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium bg-light/90 backdrop-blur-sm border-b border-dark/10">
       <div className="flex items-center justify-between gap-4 md:hidden">
         <nav className="flex items-center gap-3 text-sm sm:text-base">
           <CustomLink href="#home" title="Home" activeSection={activeSection} />
@@ -89,8 +89,8 @@ const NavBar = () => {
       <div className="hidden md:flex items-center justify-between">
         <nav className="flex items-center justify-center text-base">
           <CustomLink href="#home" title="Home" className="mr-4" activeSection={activeSection} />
-          <CustomLink href="#about" title="About" className="mx-4" activeSection={activeSection} />
           <CustomLink href="#projects" title="Projects" className="mx-4" activeSection={activeSection} />
+          <CustomLink href="#about" title="About" className="mx-4" activeSection={activeSection} />
         </nav>
 
         <div className="absolute left-1/2 top-3 z-10 -translate-x-1/2">

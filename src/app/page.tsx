@@ -167,7 +167,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start self-center lg:self-start mt-2 gap-3 sm:gap-4">
                 <Link
-                  href="/Brandon_Cruz-Youll_Resume.pdf"
+                  href="/Cruz-Youll_Brandon_Resume.pdf"
                   target="_blank"
                   className="flex items-center bg-dark text-light p-2.5 px-5 sm:px-6
                 rounded-lg text-base sm:text-lg font-semibold hover:bg-light hover:text-dark
@@ -225,7 +225,7 @@ export default function Home() {
             <div className="col-span-12 md:col-span-6">
               <Project
                 type="School Project"
-                title="Duck Hunter: create a storefront in vanilla javascript"
+                title="Duck Hunter: A storefront in vanilla javascript"
                 img={ducks}
                 github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
               />

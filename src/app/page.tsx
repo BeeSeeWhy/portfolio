@@ -191,7 +191,7 @@ export default function Home() {
 
         <section id="projects" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
-            Dedication In Action!
+            Projects
           </h1>
           <div className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 gap-y-12 sm:gap-y-16 lg:gap-y-24">
             <div className="col-span-12">
@@ -235,7 +235,7 @@ export default function Home() {
 
         <section id="about" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
           <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
-            Passion Fuels Purpose!
+            About
           </h1>
           <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-10 md:gap-12 lg:gap-16">
             <div className="md:col-span-5 lg:col-span-4 flex flex-col items-start justify-start order-2 md:order-1">

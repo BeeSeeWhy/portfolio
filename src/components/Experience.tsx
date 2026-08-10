@@ -9,7 +9,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   return (
     <li
       ref={ref}
-      className="my-9 first:mt-0 last:mb-0 w-[88%] sm:w-[85%] lg:w-[70%] xl:w-[60%] mx-auto flex flex-col items-center justify-between"
+      className="my-9 first:mt-0 last:mb-0 w-[88%] sm:w-[85%] lg:w-[70%] xl:w-[60%] mx-auto flex flex-col items-start justify-between"
     >
       <LiIcon reference={ref} />
       <div>

@@ -1,255 +1,206 @@
-import { Inter } from "next/font/google";
 import Layout from "@/components/Layout";
 import Image from "next/image";
-import profilePic from "../../public/images/profile/profilealt.png";
-import aboutPic from "../../public/images/profile/about.jpeg";
+import heroPhoto from "../../public/images/profile/about.jpeg";
 import Link from "next/link";
-import { LinkArrow } from "@/components/Icons";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
-import Education from "@/components/Education";
-import { GithubIcon } from "@/components/Icons";
-import type { StaticImageData } from "next/image";
-import support from "../../public/images/projects/support_sfusd.png";
-import artemis from "../../public/images/projects/artemis.png";
-import alien from "../../public/images/projects/alieninvasion.png";
-import ducks from "../../public/images/projects/duckhunter.png";
 
-const inter = Inter({ subsets: ["latin"] });
-
-type FeaturedProjectProps = {
-  type: string;
+type ProjectEntry = {
+  index: string;
   title: string;
-  summary: string;
-  img: StaticImageData;
+  desc: string;
+  tag: string;
   link?: string;
   github: string;
 };
 
-type ProjectProps = {
-  type: string;
-  title: string;
-  img: StaticImageData;
-  link?: string;
-  github: string;
-};
+const PROJECTS: ProjectEntry[] = [
+  {
+    index: "01",
+    title: "Support SF Schools",
+    desc: "A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating.",
+    tag: "Volunteer Project",
+    link: "https://supportsfschools.org",
+    github: "https://github.com/sfbrigade/support-sfusd",
+  },
+  {
+    index: "02",
+    title: "Alien Invasion",
+    desc: "The assignment was create a game in javascript without using any libraries.",
+    tag: "School Project",
+    link: "https://javascript-alien-invasion.vercel.app/",
+    github: "https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy",
+  },
+  {
+    index: "03",
+    title: "Artemis",
+    desc: "A Take on Trello",
+    tag: "School Project",
+    github: "https://github.com/CSC-648-SFSU/csc648-spring22-04-team02",
+  },
+  {
+    index: "04",
+    title: "Duck Hunter",
+    desc: "A storefront in vanilla javascript",
+    tag: "School Project",
+    github: "https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy",
+  },
+];
 
-const FeaturedProject = ({ type, title, summary, img, link, github }: FeaturedProjectProps) => {
-  const hasLiveLink = Boolean(link && link !== "/");
-
-  return (
-    <article
-      className="w-full flex flex-col lg:flex-row items-center justify-between relative rounded-br-2xl
-        rounded-3xl border border-solid border-dark bg-light shadow-2xl p-6 sm:p-8 lg:p-12 gap-6 lg:gap-0
-        "
-    >
-      {hasLiveLink ? (
-        <Link
-          href={link!}
-          target="_blank"
-          className="w-full lg:w-1/2 cursor-pointer overflow-hidden rounded-lg"
-        >
-          <Image src={img} alt={title} className="w-full h-auto" />
-        </Link>
-      ) : (
-        <div className="w-full lg:w-1/2 overflow-hidden rounded-lg">
-          <Image src={img} alt={title} className="w-full h-auto" />
-        </div>
-      )}
-      <div className="w-full lg:w-1/2 flex flex-col items-start justify-between lg:pl-6">
-        <span className="text-primary font-medium text-base sm:text-lg lg:text-xl">{type}</span>
-        {hasLiveLink ? (
-          <Link href={link!} target="_blank">
-            <h2 className="my-2 w-full text-left text-2xl sm:text-3xl lg:text-4xl font-bold">{title}</h2>
-          </Link>
-        ) : (
-          <h2 className="my-2 w-full text-left text-2xl sm:text-3xl lg:text-4xl font-bold">{title}</h2>
-        )}
-        <p className="my-2 font-medium text-dark text-sm sm:text-base lg:text-lg">{summary}</p>
-        <div className="mt-2 flex items-center">
-          <Link
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${title} source code on GitHub`}
-            title={`GitHub repository for ${title}`}
-            className="w-10"
-          >
-            <GithubIcon />
-          </Link>
-          {hasLiveLink ? (
-            <Link
-              href={link!}
-              target="_blank"
-              className="ml-4 rounded-lg bg-dark text-light p-2 px-5 sm:px-6 text-sm sm:text-base lg:text-lg font-semibold"
-            >
-              Visit project
-            </Link>
-          ) : null}
-        </div>
-      </div>
-    </article>
-  );
-};
-
-const Project = ({ type, title, img, link, github }: ProjectProps) => {
-  const hasLiveLink = Boolean(link && link !== "/");
+const ProjectRow = ({ index, title, desc, tag, link, github }: ProjectEntry) => {
+  const hasLiveLink = Boolean(link);
 
   return (
-    <article
-      className="w-full flex flex-col items-center justify-center rounded-2xl
-        border border-solid border-dark bg-light p-6 relative
-        "
-    >
-      {hasLiveLink ? (
-        <Link
-          href={link!}
-          target="_blank"
-          className="w-full cursor-pointer overflow-hidden rounded-lg"
-        >
-          <Image src={img} alt={title} className="w-full h-auto" />
-        </Link>
-      ) : (
-        <div className="w-full overflow-hidden rounded-lg">
-          <Image src={img} alt={title} className="w-full h-auto" />
-        </div>
-      )}
-      <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-base sm:text-lg lg:text-xl">{type}</span>
-        {hasLiveLink ? (
-          <Link href={link!} target="_blank">
-            <h2 className="my-2 w-full text-left text-2xl sm:text-3xl font-bold">{title}</h2>
-          </Link>
-        ) : (
-          <h2 className="my-2 w-full text-left text-2xl sm:text-3xl font-bold">{title}</h2>
-        )}
-        <div className="w-full mt-2 flex items-center justify-between">
+    <div className="grid grid-cols-1 sm:grid-cols-[56px_1fr_auto] gap-4 sm:gap-6 sm:items-center py-6 border-b border-line hover:bg-paper/[0.02] transition-colors">
+      <span className="hidden sm:block font-mono text-[13px] text-mist-light">{index}</span>
+      <div>
+        <h3 className="font-display text-lg sm:text-xl font-semibold text-paper mb-1.5">
           {hasLiveLink ? (
-            <Link
-              href={link!}
-              target="_blank"
-              className="text-base sm:text-lg font-semibold underline"
-            >
-              Visit
+            <Link href={link!} target="_blank" className="hover:text-amber transition-colors">
+              {title}
             </Link>
-          ) : <span />}
-          <Link
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`View ${title} source code on GitHub`}
-            title={`GitHub repository for ${title}`}
-            className="w-8"
-          >
-            <GithubIcon />
-          </Link>
-        </div>
+          ) : (
+            title
+          )}
+        </h3>
+        <p className="text-sm text-mist max-w-lg mb-2.5">{desc}</p>
+        <span className="font-mono text-[10.5px] tracking-wide text-mist-light border border-line-strong px-2 py-0.5 rounded-sm">
+          {tag}
+        </span>
       </div>
-    </article>
+      <div className="flex sm:flex-col items-start sm:items-end gap-2 font-mono text-xs">
+        <span
+          className={`text-[10px] tracking-wide uppercase px-2.5 py-0.5 rounded-full ${
+            hasLiveLink ? "bg-amber/10 text-amber" : "bg-mist/10 text-mist"
+          }`}
+        >
+          {hasLiveLink ? "Live" : "Repository"}
+        </span>
+        {hasLiveLink && (
+          <Link href={link!} target="_blank" className="text-mist hover:text-amber transition-colors">
+            Visit &rarr;
+          </Link>
+        )}
+        <Link
+          href={github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${title} source code on GitHub`}
+          className="text-mist hover:text-amber transition-colors"
+        >
+          GitHub &rarr;
+        </Link>
+      </div>
+    </div>
   );
 };
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center text-dark w-full min-h-screen">
-      <Layout className="pt-4 sm:pt-6 md:pt-10 lg:pt-0">
-        <section id="home" className="scroll-mt-24">
-          <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-10 lg:gap-12">
-            <div className="w-full lg:w-1/2 max-w-xl lg:max-w-none">
-              <Image src={profilePic} alt="Brandon" className="w-full h-auto" priority loading="eager" />
-            </div>
-            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start self-center">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl font-bold text-center lg:text-left leading-tight">
-                Frontend Engineering with an Operator&apos;s Mindset.
+    <main className="flex flex-col items-center w-full min-h-screen">
+      <Layout>
+        <section id="home" className="pt-4 sm:pt-8 lg:pt-12 pb-16 sm:pb-20 scroll-mt-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
+            <div>
+              <div className="flex items-center gap-2.5 mb-6 font-mono text-xs tracking-widest uppercase text-amber">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse" />
+                Full Stack Engineer &middot; San Francisco
+              </div>
+              <h1 className="font-display font-semibold text-[34px] sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight text-paper mb-6">
+                Full Stack Engineering with an <span className="text-amber">Operator&apos;s Mindset.</span>
               </h1>
-              <p className="my-4 text-sm sm:text-base lg:text-lg font-medium text-center lg:text-left">
-                I&apos;m a Software Engineer at Nayak.ai with nearly two decades of experience leading operations and billing teams. I don&apos;t just build user interfaces; I build reliable, performant tools designed to solve bottlenecks. My background in high-stakes triage means I approach every React component with a focus on reliability, efficiency, and scale.
+              <p className="text-[17px] text-mist max-w-xl mb-9 leading-relaxed">
+                I&apos;m a Software Engineer at{" "}
+                <strong className="text-paper font-medium">Nayak.ai</strong>{" "}
+                with nearly two decades of experience leading operations and billing teams. I don&apos;t just build user interfaces; I build reliable, performant tools designed to solve bottlenecks. My background in high-stakes triage means I approach every React component with a focus on reliability, efficiency, and scale.
               </p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start self-center lg:self-start mt-2 gap-3 sm:gap-4">
+              <div className="flex flex-wrap items-center gap-3.5">
                 <Link
                   href="/Cruz-Youll_Brandon_Resume.pdf"
                   target="_blank"
-                  className="flex items-center bg-dark text-light p-2.5 px-5 sm:px-6
-                rounded-lg text-base sm:text-lg font-semibold hover:bg-light hover:text-dark
-                border-2 border-solid border-transparent hover:border-dark
-                "
+                  className="font-mono text-[13px] tracking-wide px-6 py-3.5 rounded-sm bg-amber text-ink font-medium hover:bg-amber-light hover:-translate-y-px transition-all"
                   download
                 >
-                  Resume <LinkArrow className={"w-6 ml-1"} />
+                  Resume
                 </Link>
                 <Link
                   href="mailto:brandon@beeseewhy.com"
-                  target="_blank"
-                  className="text-base sm:text-lg font-medium capitalize text-dark underline"
+                  className="font-mono text-[13px] tracking-wide px-6 py-3.5 rounded-sm border border-line-strong text-paper hover:border-amber hover:text-amber transition-colors"
                 >
                   Contact
                 </Link>
               </div>
             </div>
-          </div>
-        </section>
 
-        <section id="projects" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
-            Dedication In Action!
-          </h1>
-          <div className="grid grid-cols-12 gap-8 sm:gap-12 lg:gap-16 gap-y-12 sm:gap-y-16 lg:gap-y-24">
-            <div className="col-span-12">
-              <FeaturedProject
-                type="Volunteer Project"
-                title="Support SF Schools"
-                summary="A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating."
-                img={support}
-                link="https://supportsfschools.org"
-                github="https://github.com/sfbrigade/support-sfusd"
-              />
-            </div>
-            <div className="col-span-12">
-              <FeaturedProject
-                type="School Project"
-                title="Alien Invasion"
-                summary="The assignment was create a game in javascript without using any libraries."
-                img={alien}
-                link="https://javascript-alien-invasion.vercel.app/"
-                github="https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy"
-              />
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <Project
-                type="School Project"
-                title="Artemis: A Take on Trello"
-                img={artemis}
-                github="https://github.com/CSC-648-SFSU/csc648-spring22-04-team02"
-              />
-            </div>
-            <div className="col-span-12 md:col-span-6">
-              <Project
-                type="School Project"
-                title="Duck Hunter: A storefront in vanilla javascript"
-                img={ducks}
-                github="https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy"
-              />
+            <div className="w-full bg-ink-2 border border-line-strong rounded overflow-hidden">
+              <div className="w-full aspect-[4/5] relative border-b border-line-strong">
+                <Image
+                  src={heroPhoto}
+                  alt="Brandon Cruz-Youll"
+                  fill
+                  priority
+                  className="object-cover object-[center_15%] grayscale-[0.15] contrast-[1.04]"
+                  sizes="(min-width: 1024px) 33vw, 90vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/55 pointer-events-none" />
+              </div>
+              <div className="flex justify-between items-center px-5 py-3.5 border-b border-line font-mono text-[11px] tracking-widest uppercase text-mist">
+                <span>Profile</span>
+                <span>v2026.08</span>
+              </div>
+              {[
+                ["Role", "Frontend Engineer @ Nayak.ai"],
+                ["Background", "18 yrs ops & billing"],
+                ["Stack", "React · TypeScript · Next.js"],
+                ["Also uses", "Node.js · SCSS · TailwindCSS · Figma"],
+                ["Based in", "San Francisco, CA"],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="flex justify-between items-baseline gap-4 px-5 py-4 border-b border-line last:border-none"
+                >
+                  <span className="font-mono text-[11px] text-mist-light tracking-wide uppercase whitespace-nowrap">
+                    {label}
+                  </span>
+                  <span className="font-mono text-[13px] text-paper text-right">{value}</span>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="about" className="scroll-mt-24 pt-16 sm:pt-20 md:pt-24 lg:pt-28">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-center mb-10 sm:mb-14 md:mb-16">
-            Passion Fuels Purpose!
-          </h1>
-          <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-10 md:gap-12 lg:gap-16">
-            <div className="md:col-span-5 lg:col-span-4 flex flex-col items-start justify-start order-2 md:order-1">
-              <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
-                Biography
-              </h2>
-              <p className="font-medium text-sm sm:text-base lg:text-lg">
+        <section id="work" className="scroll-mt-24 py-16 sm:py-20 border-t border-line">
+          <div className="flex justify-between items-end mb-12 border-b border-line pb-6">
+            <div>
+              <div className="font-mono text-xs text-amber tracking-widest uppercase mb-2.5">Selected Work</div>
+              <h2 className="font-display text-2xl sm:text-3xl font-semibold text-paper">Projects</h2>
+            </div>
+            <div className="font-mono text-xs text-mist-light">04 entries</div>
+          </div>
+
+          <div>
+            {PROJECTS.map((project) => (
+              <ProjectRow key={project.index} {...project} />
+            ))}
+          </div>
+        </section>
+
+        <section id="about" className="scroll-mt-24 py-16 sm:py-20 border-t border-line">
+          <div className="mb-12 border-b border-line pb-6">
+            <div className="font-mono text-xs text-amber tracking-widest uppercase mb-2.5">Background</div>
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold text-paper">About</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+              <p className="text-base text-mist leading-relaxed mb-5">
                 Hello! I&apos;m Brandon Cruz-Youll, a dedicated front-end
                 developer with a fervent passion for continuous learning and
-                growth. I spent 18 years in medical triage and billing operations—a world where there is no room for lag, ambiguity, or broken workflows. That 'Operator’s Mindset' is what I bring to the browser.
+                growth. I spent 18 years in medical triage and billing operations—a world where there is no room for lag, ambiguity, or broken workflows. That &apos;Operator&rsquo;s Mindset&apos; is what I bring to the browser.
 
-My specialty is building frontend infrastructure that solves real-world bottlenecks. Whether it's optimizing React renders for real-time AI tools at Nayak.ai or leading a framework migration for SF Civic Tech, I build with a focus on reliability, performance, and scale. I don't just ship code; I build tools that work when the stakes are high.
+My specialty is building frontend infrastructure that solves real-world bottlenecks. Whether it&apos;s optimizing React renders for real-time AI tools at Nayak.ai or leading a framework migration for SF Civic Tech, I build with a focus on reliability, performance, and scale. I don&apos;t just ship code; I build tools that work when the stakes are high.
               </p>
-              <p className="my-4 font-medium text-sm sm:text-base lg:text-lg">
+              <p className="text-base text-mist leading-relaxed mb-5">
                 I thrive on the challenge of solving complex problems and
                 exploring new technologies to stay ahead of industry trends.
                 Whether it&apos;s optimizing performance, improving
@@ -260,24 +211,31 @@ My specialty is building frontend infrastructure that solves real-world bottlene
                 leave a lasting impression. Let&apos;s collaborate to bring your
                 next project to life!
               </p>
+              <Skills />
             </div>
-            <div className="hidden lg:block lg:col-span-1" />
-            <div
-              className="md:col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark
-                    bg-light p-4 sm:p-6 lg:p-8 order-1 md:order-2
-                    "
-            >
-              <div className="absolute top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem] bg-dark" />
-              <Image
-                src={aboutPic}
-                alt="Brandon Cruz-Youll"
-                className="w-full h-auto rounded-2xl"
-              />
-            </div>
+
+            <Experience />
           </div>
-          <Skills />
-          <Experience />
-          <Education />
+        </section>
+
+        <section id="contact" className="scroll-mt-24 py-20 sm:py-24 text-center border-t border-line">
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold text-paper mb-5">Contact</h2>
+          <p className="text-mist mb-9">Open to conversations about frontend roles and collaborations.</p>
+          <div className="flex flex-wrap items-center justify-center gap-3.5">
+            <Link
+              href="mailto:brandon@beeseewhy.com"
+              className="font-mono text-[13px] tracking-wide px-6 py-3.5 rounded-sm bg-amber text-ink font-medium hover:bg-amber-light hover:-translate-y-px transition-all"
+            >
+              Say hello
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/brandon-cruzyoull"
+              target="_blank"
+              className="font-mono text-[13px] tracking-wide px-6 py-3.5 rounded-sm border border-line-strong text-paper hover:border-amber hover:text-amber transition-colors"
+            >
+              Connect on LinkedIn
+            </Link>
+          </div>
         </section>
       </Layout>
     </main>

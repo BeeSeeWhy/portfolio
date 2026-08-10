@@ -26,8 +26,8 @@ const PROJECTS: ProjectEntry[] = [
   {
     index: "02",
     title: "Alien Invasion",
-    desc: "The assignment was create a game in javascript without using any libraries.",
-    tag: "School Project",
+    desc: "Updated school project to modern React, TypeScript and Vite. A simple arcade game where you shoot aliens and avoid their attacks.",
+    tag: "Updated School Project",
     link: "https://javascript-alien-invasion.vercel.app/",
     github: "https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy",
   },

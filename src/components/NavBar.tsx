@@ -21,12 +21,16 @@ const CustomLink = ({ href, title, className = " ", activeSection, onNavigate }:
   const isActive = activeSection === href;
 
   return (
-    <Link href={href} onClick={(event) => onNavigate(href, event)} className={`${className} relative group`}>
+    <Link
+      href={href}
+      onClick={(event) => onNavigate(href, event)}
+      className={`${className} relative group text-mist hover:text-paper transition-colors duration-200`}
+    >
       {title}
       <span
         className={`
-            h-[1px] inline-block bg-dark
-            absolute left-0 -bottom-0.5
+            h-[1px] inline-block bg-amber
+            absolute left-0 -bottom-1
             group-hover:w-full transition-[width] ease duration-300
             ${isActive ? "w-full" : "w-0"}
             `}
@@ -41,7 +45,7 @@ const NavBar = () => {
   const [activeSection, setActiveSection] = useState("#home");
 
   useEffect(() => {
-    const sections = ["home", "projects", "about"];
+    const sections = ["work", "about", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -88,12 +92,12 @@ const NavBar = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-medium bg-[#FF69B4] border-b border-dark/20">
+    <header className="sticky top-0 z-50 w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-mono text-xs tracking-wide uppercase bg-ink/85 backdrop-blur-md border-b border-line">
       <div className="flex items-center justify-between gap-4 md:hidden">
-        <nav className="flex items-center gap-3 text-sm sm:text-base">
-          <CustomLink href="#home" title="Home" activeSection={activeSection} onNavigate={handleNavClick} />
-          <CustomLink href="#projects" title="Projects" activeSection={activeSection} onNavigate={handleNavClick} />
+        <nav className="flex items-center gap-3">
+          <CustomLink href="#work" title="Work" activeSection={activeSection} onNavigate={handleNavClick} />
           <CustomLink href="#about" title="About" activeSection={activeSection} onNavigate={handleNavClick} />
+          <CustomLink href="#contact" title="Contact" activeSection={activeSection} onNavigate={handleNavClick} />
         </nav>
 
         <Logo />
@@ -107,7 +111,7 @@ const NavBar = () => {
             title="GitHub"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-5"
+            className="w-5 text-mist hover:text-amber transition-colors"
           >
             <GithubIcon />
           </motion.a>
@@ -119,7 +123,7 @@ const NavBar = () => {
             title="LinkedIn"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-5"
+            className="w-5 text-mist hover:text-amber transition-colors"
           >
             <LinkedInIcon />
           </motion.a>
@@ -127,10 +131,10 @@ const NavBar = () => {
       </div>
 
       <div className="hidden md:flex items-center justify-between">
-        <nav className="flex items-center justify-center text-base">
-          <CustomLink href="#home" title="Home" className="mr-4" activeSection={activeSection} onNavigate={handleNavClick} />
-          <CustomLink href="#projects" title="Projects" className="mx-4" activeSection={activeSection} onNavigate={handleNavClick} />
-          <CustomLink href="#about" title="About" className="mx-4" activeSection={activeSection} onNavigate={handleNavClick} />
+        <nav className="flex items-center justify-center">
+          <CustomLink href="#work" title="Work" className="mr-8" activeSection={activeSection} onNavigate={handleNavClick} />
+          <CustomLink href="#about" title="About" className="mx-8" activeSection={activeSection} onNavigate={handleNavClick} />
+          <CustomLink href="#contact" title="Contact" className="mx-8" activeSection={activeSection} onNavigate={handleNavClick} />
         </nav>
 
         <div className="absolute left-1/2 top-3 z-10 -translate-x-1/2">
@@ -146,7 +150,7 @@ const NavBar = () => {
             title="GitHub"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-6 mr-3"
+            className="w-5 mr-4 text-mist hover:text-amber transition-colors"
           >
             <GithubIcon />
           </motion.a>
@@ -158,7 +162,7 @@ const NavBar = () => {
             title="LinkedIn"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.9 }}
-            className="w-6 ml-3"
+            className="w-5 ml-4 text-mist hover:text-amber transition-colors"
           >
             <LinkedInIcon />
           </motion.a>

@@ -41,8 +41,9 @@ const PROJECTS: ProjectEntry[] = [
   {
     index: "04",
     title: "Duck Hunter",
-    desc: "A storefront in vanilla javascript",
-    tag: "School Project",
+    desc: "Updated pure JavaScript project to modern React, TypeScript, Tailwind CSS and Next.js, using Claude Code. A storefront for a fictional rubber duck company.",
+    tag: "Updated Project",
+    link: "https://storefront-ao2shn42m-beeseewhys-projects.vercel.app/",
     github: "https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy",
   },
 ];

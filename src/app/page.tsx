@@ -29,7 +29,7 @@ const PROJECTS: ProjectEntry[] = [
     desc: "Updated pure JavaScript project to modern React, TypeScript and Vite. A simple arcade game where you shoot aliens and avoid their attacks.",
     tag: "Updated Project",
     link: "https://javascript-alien-invasion.vercel.app/",
-    github: "https://github.com/CSC317-Spring2021/csc317-javascript-individual-game-assignment-BeeSeeWhy",
+    github: "https://github.com/BeeSeeWhy/JavascriptAlienInvasion",
   },
   {
     index: "03",
@@ -43,8 +43,8 @@ const PROJECTS: ProjectEntry[] = [
     title: "Duck Hunter",
     desc: "Updated pure JavaScript project to modern React, TypeScript, Tailwind CSS and Next.js, using Claude Code. A storefront for a fictional rubber duck company.",
     tag: "Updated Project",
-    link: "https://storefront-ao2shn42m-beeseewhys-projects.vercel.app/",
-    github: "https://github.com/CSC317-Spring2021/csc317-group-html-storefront-BeeSeeWhy",
+    link: "https://storefront-lovat-two.vercel.app/",
+    github: "https://github.com/BeeSeeWhy/storefront",
   },
 ];
 
@@ -100,7 +100,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center w-full min-h-screen">
       <Layout>
-        <section id="home" className="pt-4 sm:pt-8 lg:pt-12 pb-16 sm:pb-20 scroll-mt-24">
+        <section id="home" className="pt-2 sm:pt-4 pb-8 sm:pb-10 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-12 lg:gap-16 items-start">
             <div>
               <div className="flex items-center gap-2.5 mb-6 font-mono text-xs tracking-widest uppercase text-amber">
@@ -134,7 +134,7 @@ export default function Home() {
             </div>
 
             <div className="w-full bg-ink-2 border border-line-strong rounded overflow-hidden">
-              <div className="w-full aspect-[4/5] relative border-b border-line-strong">
+              <div className="w-full aspect-[4/3] relative border-b border-line-strong">
                 <Image
                   src={heroPhoto}
                   alt="Brandon Cruz-Youll"
@@ -145,7 +145,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ink/55 pointer-events-none" />
               </div>
-              <div className="flex justify-between items-center px-5 py-3.5 border-b border-line font-mono text-[11px] tracking-widest uppercase text-mist">
+              <div className="flex justify-between items-center px-5 py-3 border-b border-line font-mono text-[11px] tracking-widest uppercase text-mist">
                 <span>Profile</span>
                 <span>v2026.08</span>
               </div>
@@ -158,7 +158,7 @@ export default function Home() {
               ].map(([label, value]) => (
                 <div
                   key={label}
-                  className="flex justify-between items-baseline gap-4 px-5 py-4 border-b border-line last:border-none"
+                  className="flex justify-between items-baseline gap-4 px-5 py-3 border-b border-line last:border-none"
                 >
                   <span className="font-mono text-[11px] text-mist-light tracking-wide uppercase whitespace-nowrap">
                     {label}

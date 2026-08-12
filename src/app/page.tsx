@@ -170,7 +170,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="work" className="scroll-mt-24 py-16 sm:py-20 border-t border-line">
+        <section id="projects" className="scroll-mt-24 py-16 sm:py-20 border-t border-line">
           <div className="flex justify-between items-end mb-12 border-b border-line pb-6">
             <div>
               <div className="font-mono text-xs text-amber tracking-widest uppercase mb-2.5">Selected Work</div>

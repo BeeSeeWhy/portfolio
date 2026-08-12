@@ -95,7 +95,7 @@ const NavBar = () => {
     <header className="sticky top-0 z-50 w-full overflow-visible px-6 py-4 sm:px-10 md:px-16 lg:px-24 xl:px-28 2xl:px-32 font-mono text-xs tracking-wide uppercase bg-ink/85 backdrop-blur-md border-b border-line">
       <div className="flex items-center justify-between gap-4 md:hidden">
         <nav className="flex items-center gap-3">
-          <CustomLink href="#work" title="Work" activeSection={activeSection} onNavigate={handleNavClick} />
+          <CustomLink href="#projects" title="Projects" activeSection={activeSection} onNavigate={handleNavClick} />
           <CustomLink href="#about" title="About" activeSection={activeSection} onNavigate={handleNavClick} />
           <CustomLink href="#contact" title="Contact" activeSection={activeSection} onNavigate={handleNavClick} />
         </nav>
@@ -132,7 +132,7 @@ const NavBar = () => {
 
       <div className="hidden md:flex items-center justify-between">
         <nav className="flex items-center justify-center">
-          <CustomLink href="#work" title="Work" className="mr-8" activeSection={activeSection} onNavigate={handleNavClick} />
+          <CustomLink href="#projects" title="Projects" className="mr-8" activeSection={activeSection} onNavigate={handleNavClick} />
           <CustomLink href="#about" title="About" className="mx-8" activeSection={activeSection} onNavigate={handleNavClick} />
           <CustomLink href="#contact" title="Contact" className="mx-8" activeSection={activeSection} onNavigate={handleNavClick} />
         </nav>

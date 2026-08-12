@@ -47,7 +47,7 @@ const Experience = () => {
         place="San Francisco, CA"
         work="Vite, React, Typescript, SCSS, PostgreSQL, Node.js. Modernized 100% of the primary
                app interface. Solved the Drowning in Renders issue. Adding new features to the web
-                application. Building new sections of the application. Worked on company website
+                application. Built Slackbot for automating call summaries.Building new sections of the application. Worked on company website
                  using Webflow. Created and updated email templates in SendGrid."
       />
       <LogItem

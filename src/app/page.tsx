@@ -18,7 +18,7 @@ const PROJECTS: ProjectEntry[] = [
   {
     index: "01",
     title: "Support SF Schools",
-    desc: "A website to connect San Francisco residents with their local schools' opportunities for volunteering and donating.",
+    desc: "A platform that makes it easy for San Francisco residents to support their neighborhood schools — whether by volunteering time or donating funds.",
     tag: "Volunteer Project",
     link: "https://supportsfschools.org",
     github: "https://github.com/sfbrigade/support-sfusd",

@@ -33,9 +33,10 @@ const PROJECTS: ProjectEntry[] = [
   },
   {
     index: "03",
-    title: "Artemis",
-    desc: "A Take on Trello",
-    tag: "School Project",
+    title: "Band camp",
+    desc: "Updated React code to Next.js with Tailwind CSS. Used vercel along with Railway for deployment. A simple band website with a music player and tour dates.",
+    tag: "Updated Project",
+    link: "https://tone-js-project.vercel.app/",
     github: "https://github.com/CSC-648-SFSU/csc648-spring22-04-team02",
   },
   {

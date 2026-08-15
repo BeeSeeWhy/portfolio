@@ -118,7 +118,7 @@ export default function Home() {
               </p>
               <div className="flex flex-wrap items-center gap-3.5">
                 <Link
-                  href="/Cruz-Youll_Brandon_Resume.pdf"
+                  href="/Cruz-Youll_Brandon_Resumé.pdf"
                   target="_blank"
                   className="font-mono text-[13px] tracking-wide px-6 py-3.5 rounded-sm bg-amber text-ink font-medium hover:bg-amber-light hover:-translate-y-px transition-all"
                   download

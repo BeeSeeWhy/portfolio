@@ -28,7 +28,7 @@ const PROJECTS: ProjectEntry[] = [
     title: "Alien Invasion",
     desc: "Updated pure JavaScript project to modern React, TypeScript and Vite. A simple arcade game where you shoot aliens and avoid their attacks.",
     tag: "Updated Project",
-    link: "https://javascript-alien-invasion.vercel.app/",
+    link: "https://game.beeseewhy.com/",
     github: "https://github.com/BeeSeeWhy/JavascriptAlienInvasion",
   },
   {
@@ -36,7 +36,7 @@ const PROJECTS: ProjectEntry[] = [
     title: "Band camp",
     desc: "Updated React code to Next.js with Tailwind CSS. Used vercel along with Railway for deployment. A simple band website with a music player and tour dates.",
     tag: "Updated Project",
-    link: "https://tone-js-project.vercel.app/",
+    link: "https://tonejs.beeseewhy.com/",
     github: "https://github.com/CSC-648-SFSU/csc648-spring22-04-team02",
   },
   {
@@ -44,7 +44,7 @@ const PROJECTS: ProjectEntry[] = [
     title: "Duck Hunter",
     desc: "Updated pure JavaScript project to modern React, TypeScript, Tailwind CSS and Next.js, using Claude Code. A storefront for a fictional rubber duck company.",
     tag: "Updated Project",
-    link: "https://storefront-lovat-two.vercel.app/",
+    link: "https://storefront.beeseewhy.com/",
     github: "https://github.com/BeeSeeWhy/storefront",
   },
 ];

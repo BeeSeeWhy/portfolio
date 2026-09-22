@@ -112,9 +112,9 @@ export default function Home() {
                 Full Stack Engineering with an <span className="text-amber">Operator&apos;s Mindset.</span>
               </h1>
               <p className="text-[17px] text-mist max-w-xl mb-9 leading-relaxed">
-                I&apos;m a Software Engineer at{" "}
-                <strong className="text-paper font-medium">Nayak.ai</strong>{" "}
-                with nearly two decades of experience leading operations and billing teams. I don&apos;t just build user interfaces; I build reliable, performant tools designed to solve bottlenecks. My background in high-stakes triage means I approach every React component with a focus on reliability, efficiency, and scale.
+                I&apos;m a Full Stack Engineer at{" "}
+                <strong className="text-paper font-medium">Nayak.ai</strong>,
+                focused on the frontend, with nearly two decades of experience leading operations and billing teams. I don&apos;t just build interfaces; I build reliable, performant products designed to solve bottlenecks. My background in high-stakes triage means I approach every feature with a focus on reliability, efficiency, and the end-to-end user experience.
               </p>
               <div className="flex flex-wrap items-center gap-3.5">
                 <Link
@@ -151,7 +151,7 @@ export default function Home() {
                 <span>v2026.08</span>
               </div>
               {[
-                ["Role", "Frontend Engineer @ Nayak.ai"],
+                ["Role", "Full Stack Engineer @ Nayak.ai"],
                 ["Background", "18 yrs ops & billing"],
                 ["Stack", "React · TypeScript · Next.js"],
                 ["Also uses", "Node.js · SCSS · TailwindCSS · Figma"],
@@ -196,11 +196,24 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <p className="text-base text-mist leading-relaxed mb-5">
-                Hello! I&apos;m Brandon Cruz-Youll, a dedicated front-end
-                developer with a fervent passion for continuous learning and
-                growth. I spent 18 years in medical triage and billing operations—a world where there is no room for lag, ambiguity, or broken workflows. That &apos;Operator&rsquo;s Mindset&apos; is what I bring to the browser.
-
-My specialty is building frontend infrastructure that solves real-world bottlenecks. Whether it&apos;s optimizing React renders for real-time AI tools at Nayak.ai or leading a framework migration for SF Civic Tech, I build with a focus on reliability, performance, and scale. I don&apos;t just ship code; I build tools that work when the stakes are high.
+                Hello! I&apos;m Brandon Cruz-Youll, a full stack engineer with
+                a front-end focus and a fervent passion for continuous
+                learning and growth. I spent 18 years in medical triage and
+                billing operations—a world where there is no room for lag,
+                ambiguity, or broken workflows. That &apos;Operator&rsquo;s
+                Mindset&apos; is what I bring to the browser, along with a
+                product sensibility: I care as much about whether a feature
+                solves the right problem as how it&apos;s built.
+              </p>
+              <p className="text-base text-mist leading-relaxed mb-5">
+                My specialty is building frontend infrastructure that solves
+                real-world bottlenecks, backed by enough full stack range to
+                reason about the whole system. Whether it&apos;s optimizing
+                React renders for real-time AI tools at Nayak.ai or leading a
+                framework migration for SF Civic Tech, I build with a focus
+                on reliability, performance, and scale. I don&apos;t just
+                ship code; I build products that work when the stakes are
+                high.
               </p>
               <p className="text-base text-mist leading-relaxed mb-5">
                 I thrive on the challenge of solving complex problems and

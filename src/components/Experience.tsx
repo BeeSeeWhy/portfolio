@@ -41,7 +41,7 @@ const Experience = () => {
     <div className="w-full">
       <LogItem
         time="2025—"
-        role="Front End Software Engineer"
+        role="Full Stack Software Engineer"
         org="Nayak.ai"
         orgLink="https://www.nayak.ai"
         place="San Francisco, CA"

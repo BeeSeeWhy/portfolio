@@ -24,7 +24,7 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Brandon Cruz-Youll — Frontend Engineer",
+  title: "Brandon Cruz-Youll — Full-Stack Engineer",
   description: "Brandon Cruz-Youll's Portfolio.",
 };
 
